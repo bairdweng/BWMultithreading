@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GCDViewController">
+            <connections>
+                <outlet property="imageView" destination="Gls-Ku-1Wd" id="E2K-0p-MIO"/>
+                <outlet property="imageView2" destination="VoM-JQ-gSy" id="gpR-Ld-w1D"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gls-Ku-1Wd">
+                    <rect key="frame" x="15" y="64" width="384" height="150"/>
+                    <color key="backgroundColor" white="0.81667941430000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Lwm-Jw-Es8"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VoM-JQ-gSy">
+                    <rect key="frame" x="15" y="217" width="384" height="150"/>
+                    <color key="backgroundColor" white="0.81667941430000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Qj3-3x-uvg"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wLo-Fe-dTL">
+                    <rect key="frame" x="15" y="377" width="384" height="240"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VLk-ue-jFS" userLabel="全局队列">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-4B-x4y">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="全局队列"/>
+                                    <connections>
+                                        <action selector="clickOntheGlobal:" destination="-1" eventType="touchUpInside" id="ZDh-mb-hTD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwI-Ek-ZPW" userLabel="全局同步">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="全局同步"/>
+                                    <connections>
+                                        <action selector="clickOntheGlobalSort:" destination="-1" eventType="touchUpInside" id="Ih6-we-Zbz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YOv-4O-mqW" userLabel="主队列">
+                            <rect key="frame" x="0.0" y="35" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMz-ih-Y5j">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="主同步"/>
+                                    <connections>
+                                        <action selector="clickOnMainSync:" destination="-1" eventType="touchUpInside" id="WIX-hd-vDP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENq-aM-frB">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="主异步"/>
+                                    <connections>
+                                        <action selector="clickOntheMain:" destination="-1" eventType="touchUpInside" id="Dmi-vo-RlC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pq3-by-OmU" userLabel="串行">
+                            <rect key="frame" x="0.0" y="70" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U2-eG-A01" userLabel="串同步">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="串同步"/>
+                                    <connections>
+                                        <action selector="clickOnSerialQueue:" destination="-1" eventType="touchUpInside" id="Omp-Rp-D23"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-eJ-1c8" userLabel="串异步">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="串异步"/>
+                                    <connections>
+                                        <action selector="clickOnSyncSerial:" destination="-1" eventType="touchUpInside" id="Ib3-eG-Z7b"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5rp-aT-eXD" userLabel="并行">
+                            <rect key="frame" x="0.0" y="105" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-RI-g8T" userLabel="串同步">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="并同步"/>
+                                    <connections>
+                                        <action selector="clickOnSyncConcurrent:" destination="-1" eventType="touchUpInside" id="C7G-Iv-qQ2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWu-CI-gtx" userLabel="串异步">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="并异步"/>
+                                    <connections>
+                                        <action selector="clickOnConcurrent:" destination="-1" eventType="touchUpInside" id="Qr0-j5-p0A"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EJp-OP-Tis" userLabel="队列组">
+                            <rect key="frame" x="0.0" y="140" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48i-S4-0JX">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                    <state key="normal" title="组同步"/>
+                                    <connections>
+                                        <action selector="notification:" destination="-1" eventType="touchUpInside" id="qH5-3a-Eyy"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYl-9c-vCf" userLabel="组等待">
+                                    <rect key="frame" x="128" y="0.0" width="128" height="30"/>
+                                    <state key="normal" title="组等待"/>
+                                    <connections>
+                                        <action selector="groupWait:" destination="-1" eventType="touchUpInside" id="vfm-dn-Snu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVO-q7-ao6" userLabel="组入出">
+                                    <rect key="frame" x="256" y="0.0" width="128" height="30"/>
+                                    <state key="normal" title="组出入"/>
+                                    <connections>
+                                        <action selector="enterLeave:" destination="-1" eventType="touchUpInside" id="E7U-jn-ZIu"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fT1-dX-Z8O" userLabel="信号量">
+                            <rect key="frame" x="0.0" y="175" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPe-sg-A6p" userLabel="线程同步">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="线程同步"/>
+                                    <connections>
+                                        <action selector="semaphoreSync:" destination="-1" eventType="touchUpInside" id="ADp-lX-hbG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpR-1Q-ZPF" userLabel="加锁">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="加锁"/>
+                                    <connections>
+                                        <action selector="clickOnTheSemaphoreLock:" destination="-1" eventType="touchUpInside" id="09t-x7-LST"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P0y-NG-t60" userLabel="其它">
+                            <rect key="frame" x="0.0" y="210" width="384" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opt-Bg-Bvx" userLabel="快速迭代">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="快速迭代"/>
+                                    <connections>
+                                        <action selector="fastIterative:" destination="-1" eventType="touchUpInside" id="nOo-fc-i7F"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGN-DK-Fw9" userLabel="栅栏">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                    <state key="normal" title="栅栏"/>
+                                    <connections>
+                                        <action selector="barrierAsync:" destination="-1" eventType="touchUpInside" id="kqi-ML-KYz"/>
+                                        <action selector="place:" destination="-1" eventType="touchUpInside" id="8Vm-pO-v0q"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itx-Vh-F6s">
+                    <rect key="frame" x="188.5" y="817" width="37" height="30"/>
+                    <state key="normal" title="clean"/>
+                    <connections>
+                        <action selector="clean:" destination="-1" eventType="touchUpInside" id="ShN-WQ-5kp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="itx-Vh-F6s" secondAttribute="bottom" constant="15" id="1Bj-0c-l2X"/>
+                <constraint firstItem="itx-Vh-F6s" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6EV-MF-lmh"/>
+                <constraint firstItem="VoM-JQ-gSy" firstAttribute="top" secondItem="Gls-Ku-1Wd" secondAttribute="bottom" constant="3" id="9Ns-v3-PAO"/>
+                <constraint firstItem="Gls-Ku-1Wd" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="MKG-8Q-HB1"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="VoM-JQ-gSy" secondAttribute="trailing" constant="15" id="Mz4-zz-DSG"/>
+                <constraint firstItem="Gls-Ku-1Wd" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="N75-Me-6js"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wLo-Fe-dTL" secondAttribute="trailing" constant="15" id="P4V-GC-5rM"/>
+                <constraint firstItem="VoM-JQ-gSy" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="XRr-G4-tBA"/>
+                <constraint firstItem="wLo-Fe-dTL" firstAttribute="top" secondItem="VoM-JQ-gSy" secondAttribute="bottom" constant="10" id="bzp-kd-mmn"/>
+                <constraint firstItem="wLo-Fe-dTL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="qLx-gm-wlI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Gls-Ku-1Wd" secondAttribute="trailing" constant="15" id="zlO-Og-yR9"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
