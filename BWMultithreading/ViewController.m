@@ -7,6 +7,10 @@
 
 #import "ViewController.h"
 #import "GCDViewController.h"
+#import "ThreadViewController.h"
+#import "BWWildPointerViewController.h"
+#import "BWFMDBViewController.h"
+#import <YYCache.h>
 static NSString *cellId = @"testCellId";
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,12 +26,13 @@ static NSString *cellId = @"testCellId";
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
 	[self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:cellId];
+
 	// Do any additional setup after loading the view.
 }
 
 - (NSArray *)items {
 	if (!_items) {
-		_items = @[@"GCD"];
+		_items = @[@"GCD",@"NSThread",@"多线程导致野指针",@"多线程与FMDB"];
 	}
 	return _items;
 }
@@ -54,6 +59,20 @@ static NSString *cellId = @"testCellId";
 		[self.navigationController pushViewController:gcdVc animated:YES];
 	}
 	break;
+	case 1: {
+		ThreadViewController *threadVc = [[ThreadViewController alloc]init];
+		[self.navigationController pushViewController:threadVc animated:YES];
+	}
+	break;
+	case 2: {
+		BWWildPointerViewController * vc = [[BWWildPointerViewController alloc]init];
+		[self.navigationController pushViewController:vc animated:YES];
+	}
+	break;
+	case 3: {
+		BWFMDBViewController *vc = [[BWFMDBViewController alloc]init];
+		[self.navigationController pushViewController:vc animated:YES];
+	}
 	default:
 		break;
 	}
